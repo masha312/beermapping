@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Front Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#container").submit(function (event) {
+                let target = $("#user_inp").val();
+                $("#brewerieslist").html("");
+                $(function () {
+                    $.get("http://beermapping.com/webservice/locquery/fd06c0c858a626554c417fb543669c1e/" + target + "&s=json", function (data) {
+                        $.each(data, function (i, item) {
+                            var obj = data[i];
+                            $("#brewerieslist").append("<p>" + obj.name + "</br></p>");
+                        });
+                    });
+                });
+                event.preventDefault();
+            });
+        });
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="beermapping.css">
+</head>
+
+<body>
+    <form id="container">
+        <p id="intro">Enter beer:</p>
+        <input id="user_inp" type="text" autofocus>
+        <input type="submit" id="btn" value="Search">
+    </form>
+    <div id="brewerieslist">
+    </div>
+
+
+</body>
+
+</html>

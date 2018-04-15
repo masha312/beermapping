@@ -1,0 +1,50 @@
+body {
+    font-family: Calibri;
+    margin: 20px;
+}
+
+#btn {
+    width: 120px;
+    height: 120px;
+   border-radius: 100%;
+    background: none;
+    background-color: orangered;
+    color: white;
+    font-family: Calibri;
+    font-size: 20px;
+    border: none;
+    letter-spacing: 1px;
+    transition-duration: 0.3s;
+}
+
+#btn:hover {
+    background-color: rgb(192, 58, 10);
+}
+#btn:focus {
+    outline: none;
+}
+
+#user_inp {
+    border: none;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    text-align: center;
+    padding-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Calibri;
+    font-size: 20px;
+}
+
+#user_inp:focus {
+    outline: none;
+}
+
+#intro {
+    font-size: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
